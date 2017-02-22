@@ -7,7 +7,7 @@ var pict = {}
 
 pict.apiPath = '/pic/api';
 pict.baseUrl = process.env.NODE_ENV=='development'
-                ? 'http://alpha.in.dynetics.com/lance_test' + pict.apiPath
+                ? pict.apiPath
                 : pict.apiPath + '/test-index.php';
 pict.isDev = process.env.NODE_ENV=='development' ? 1 : 0;
 
