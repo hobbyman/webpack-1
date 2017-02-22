@@ -1,17 +1,17 @@
 <template>
     <div id="search">
         <form id="searchForm" class="navbar-form navbar-left dropdown">
-            <input id="searchText" type="text" class="name-search search-query dropdown-toggle form-control" data-toggle="dropdown" placeholder="Search by name" autocomplete="off" v-model="emplname" @focus="enter"/>
+            <input id="searchText" v-focus.lazy='true' type="text" class="name-search search-query dropdown-toggle form-control" data-toggle="dropdown" placeholder="Search by name" autocomplete="off" v-model="emplname" @focus="enter"/>
             <ul class='dropdown-menu'>
                 <simple-empl :item="emp" v-for="emp in searchReturnedEmpls"></simple-empl>
             </ul>
-
         </form>
     </div>
 </template>
 
 <script>
     import Vue from 'vue'
+    import VueFocus from 'vue-focus'
     import Pict from '../api-calls'
 
     Vue.component( 'simple-empl', {
@@ -40,6 +40,7 @@
     });
     export default {
         name: 'search',
+        mixins: [VueFocus.mixin],
         data() {
             return {
                 emplid: null,

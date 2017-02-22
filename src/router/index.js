@@ -6,6 +6,7 @@ import EmplDetails from 'components/EmplDetails'
 import ListingByOrg from 'components/ListingByOrg'
 
 Vue.use(Router)
+
 export default new Router({
   routes: [
     { name: 'home', path: '/', component: Home },
